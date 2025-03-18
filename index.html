@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasper van Heusden - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="toggle-dark-mode" title="Toggle dark mode">🌙</button>
+
+  <main>
+    <h1>Jasper van Heusden</h1>
+  <p>Informatics Student | My Portfolio</p>
+
+    <nav>
+      <a href="https://github.com/jappoguappo" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/jasper-van-heusden-2206971b0/" target="_blank">LinkedIn</a>
+      <a href="mailto:Jaspervh2006@gmail.com">Contact</a>
+    </nav>
+
+    <section id="projects" style="display: none; opacity: 0; transition: opacity 1s ease;">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <img src="portfolio image 1.jpg" alt="PWS Image">
+          <h3>Simulated Ecosystem</h3>
+          <p>Using ML-Agents a friend and I created a digital environment in Unity. In the environment we simulated a dynamic balance between predator and prey in an ecosystem.</p>
+            <a href="https://github.com/Skiryy/PWS" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="project-card">
+          <h3>C++ Masterclass </h3>
+          <p>During 2023 I followed a series of classes at the Vrije Universiteit in C++. These lessons were lead by Thilo Kielmann and ended with us making a Maze Generator</p>
+      </div>
+
+      <div class="project-card">
+        <img src="portfolio image 2.png" alt="NTK Image">
+        <h3>NewTechKids </h3>
+        <p>Throughout 2023 and 2024 I worked with NewTechKids to help children around the age of ten to learn robotics through Lego Mindstorms.</p>
+        <a href="https://newtechkids.com/en/" target="_blank">NewTechKids Website →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Time and time again </h3>
+      <p>Time and time again is a platformer game involving time travel me and two other friends made for a game jame in 2021. We had a week to design and code the game. This was one of the first games I ever made.</p>
+      <a href="https://gast2405.itch.io/time-and-time-again" target="_blank">Check out the game →</a>
+  </div>
+    </section>
+  </main>
+
+  <button id="scroll-button" class="scroll-button">👇 Read More</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('toggle-dark-mode');
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+      });
+
+      const scrollButton = document.getElementById('scroll-button');
+      const projectsSection = document.getElementById('projects');
+      const mainContent = document.querySelector('main');
+
+      scrollButton.addEventListener('click', () => {
+        projectsSection.style.display = 'block';
+        setTimeout(() => {
+          projectsSection.style.opacity = 1;
+        }, 50);
+        scrollButton.style.display = 'none';
+        mainContent.classList.add('expanded');
+      });
+    });
+  </script>
+</body>
+</html>

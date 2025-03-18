@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #111;
+  background:
+    linear-gradient(135deg, #f8f8f8, #eaeaea),
+    url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-blend-mode: overlay;
+  transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
+}
+
+body.dark {
+  background:
+    linear-gradient(135deg, #1a1a1a, #111),
+    url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-blend-mode: overlay;
+  color: #eee;
+  transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
+}
+
+main {
+  max-width: 600px;
+  margin-top: 2rem;
+  transition: margin-top 0.5s ease, transform 0.5s ease;
+}
+
+main.expanded {
+  margin-top: 5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: inherit;
+}
+
+nav {
+  margin-bottom: 3rem;
+}
+
+nav a {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+h2 {
+  padding-bottom: 3rem;
+}
+
+nav a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body.dark nav a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark .project-card{
+  color: black;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-button:hover {
+  background-color: #333;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 500;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem; 
+}
+
+
+#projects {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h2 {
+    padding-left: 2.5rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0 1rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+}
+
+#toggle-dark-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+  color: inherit;
+  z-index: 100;
+}
+
+#toggle-dark-mode:hover {
+  transform: scale(1.15);
+}
