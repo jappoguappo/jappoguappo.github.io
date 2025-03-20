@@ -19,7 +19,7 @@ body {
 
 body.dark { /* zelfde maar dan voor dark mode */
   background:
-    #111('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    #111 url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
   color: #eeeeee;
   transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
 }
