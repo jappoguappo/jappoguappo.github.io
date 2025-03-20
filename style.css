@@ -2,39 +2,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} /* Reset alle margins etc */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  display: flex;
+  min-height: 100vh; /* altijd net zo groot als je viewport */
+  display: flex; /* zorgt voor positioning x3 */
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #111;
-  background:
-    linear-gradient(135deg, #f8f8f8, #eaeaea),
+  color: #111111; /* bijna zwarte tekst kleur */
+  background: /* achtergrond image en soepele transition naar dark mode */
     url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-  background-blend-mode: overlay;
   transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
 }
 
-body.dark {
+body.dark { /* zelfde maar dan voor dark mode */
   background:
-    linear-gradient(135deg, #1a1a1a, #111),
     url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-  background-blend-mode: overlay;
-  color: #eee;
+  color: #eeeeee;
   transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
 }
 
-main {
+main { /* rem voor tekst grote voor meer consistentie bij andere devices, % is relatief aan de parent */
   max-width: 600px;
   margin-top: 2rem;
-  transition: margin-top 0.5s ease, transform 0.5s ease;
+  transition: margin-top 0.5s ease, transform 0.5s ease; /* soepele transition bij page expansion */
 }
 
-main.expanded {
+main.expanded { /* zorgt voor meer ruimte als de page expand */
   margin-top: 5rem;
 }
 
@@ -62,7 +58,7 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a::after {
+nav a::after { /* maakt een onzichtbare stuck tekst voor underline effect */
   content: "";
   display: block;
   width: 0%;
@@ -116,7 +112,7 @@ body.dark .project-card{
   background-color: #333;
 }
 
-.project-list {
+.project-list { /* geeft de project cards juiste positie en margins */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -147,7 +143,7 @@ body.dark .project-card{
 
 .project-card a {
   text-decoration: none;
-  color: #007BFF;
+  color: rgba(0, 0, 0, 1);
   font-weight: 500;
 }
 
@@ -155,11 +151,12 @@ body.dark .project-card{
   text-decoration: underline;
 }
 
+
 .project-card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 
 
@@ -170,7 +167,7 @@ body.dark .project-card{
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* veranderd font etc voor andere devices */
   h1 {
     font-size: 2.5rem;
   }
@@ -193,7 +190,7 @@ body.dark .project-card{
   }
 }
 
-#toggle-dark-mode {
+#toggle-dark-mode { /* css voor darkmode knop zelf */
   position: fixed;
   top: 1rem;
   right: 1rem;
