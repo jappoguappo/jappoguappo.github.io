@@ -13,13 +13,13 @@ body {
   text-align: center;
   color: #111111; /* bijna zwarte tekst kleur */
   background: /* achtergrond image en soepele transition naar dark mode */
-    url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+     url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
   transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
 }
 
 body.dark { /* zelfde maar dan voor dark mode */
   background:
-    url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    #111
   color: #eeeeee;
   transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
 }
